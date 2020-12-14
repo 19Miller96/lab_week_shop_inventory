@@ -1,15 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1> {{product.name}} </h1>
 
-<p>Description: {{ product.description }}</p>
-
-<h3>Products:</h3>
-<ul>
-    {% for product in products %}
-    <li>{{ product.name }}</li>
-    {% endfor %}
-</ul>
+This is where our list of products will appear
 
 {% endblock %}

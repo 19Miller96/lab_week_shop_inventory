@@ -3,22 +3,14 @@
 {% block content %}
 <h1>Products</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/products/new">New product</a>
-</p>
-
-<ul>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
   {% for product in products %}
-  <li>
-  <p>{{ product.name.description }} - {{ manufacturer.name }} </p>
-  <p>"<i>{{product.review}}</i>"</p>
-    <p>
-      <form action="/products/{{ product.id }}/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-    </p>
-  </li>
+  <tr>
+    <td><a href="/products/{{ product.id }}"> {{product.name}} </a></td>
+  </tr>
   {% endfor %}
-</ul>
-
+</table>
 {% endblock %}

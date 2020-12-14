@@ -26,6 +26,15 @@ product_repository.save(product_3)
 manufacturer_3 = Manufacturer('Morrisons')
 manufacturer_repository.save(manufacturer_3)
 
+product_4 = Product('Mango', 'Fresh from Australia', 60, 3, 4.50)
+product_repository.save(product_4)
+
+product_5 = Product('Kiwi', 'Not actually from New Zealand', 18, 2.50, 3.20)
+product_repository.save(product_5)
+
+product_6 = Product('Avacado', 'Columbian Avacados', 80, 2, 4)
+product_repository.save(product_6)
+
 print(manufacturer_repository.products(manufacturer_1))
 pdb.set_trace()
 
