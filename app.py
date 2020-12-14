@@ -5,7 +5,7 @@ from controllers.product_controller import products_blueprint
 
 app = Flask(__name__)
 
-app.register_blueprint(manufacturers_blueprint)
+app.register_blueprint(manufacturer_blueprint)
 app.register_blueprint(products_blueprint)
 
 @app.route('/')
