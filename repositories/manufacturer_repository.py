@@ -18,7 +18,7 @@ def select_all():
     for row in results:
         manufacturer = Manufacturer(row['name'], row['id'])
         manufacturers.append(manufacturer)
-    return manufacturer
+    return manufacturers
 
 def select(id):
     manufacturer = None
