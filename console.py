@@ -14,8 +14,20 @@ product_repository.save(product_1)
 manufacturer_1 = Manufacturer('Tesco')
 manufacturer_repository.save(manufacturer_1)
 
+product_2 = Product('Apple', 'A healthy green fruit', 15, 1, 2)
+product_repository.save(product_2)
+
+manufacturer_2 = Manufacturer('Sainsburys')
+manufacturer_repository.save(manufacturer_2)
+
+product_3 = Product('Orange', 'A delicious fruit', 25, 1, 2)
+product_repository.save(product_3)
+
+manufacturer_3 = Manufacturer('Morrisons')
+manufacturer_repository.save(manufacturer_3)
+
 print(manufacturer_repository.products(manufacturer_1))
 pdb.set_trace()
 
-print(product_repository.products(product_1))
+print(product_repository.manufacturers(product_1))
 pdb.set_trace()

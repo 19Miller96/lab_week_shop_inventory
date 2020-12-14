@@ -1,0 +1,10 @@
+body {
+    background: url('/static/images/supermarket\ test_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ec4806;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 0px;
+    margin: 0px;
+  }
+

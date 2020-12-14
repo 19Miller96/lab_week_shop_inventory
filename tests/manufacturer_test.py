@@ -2,8 +2,8 @@ import unittest
 from models.manufacturer import Manufacturer
 from models.product import Product
 
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+#     unittest.main()
 
 class TestManufacturer(unittest.TestCase):
     

@@ -13,7 +13,7 @@
   <p>{{ product.name.description }} - {{ manufacturer.name }} </p>
   <p>"<i>{{product.review}}</i>"</p>
     <p>
-      <form action="/visits/{{ visit.id }}/delete" method="POST">
+      <form action="/products/{{ product.id }}/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
     </p>

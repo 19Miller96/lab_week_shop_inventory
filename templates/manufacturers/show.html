@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{manufacturer.name}} </h1>
+
+<h3>Manufacturer:</h3>
+<ul>
+    {% for manufacturer in manufacturers %}
+    <li>{{ manufacturer.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+-----------------------------------
+
+<!-- {% extends 'base.html' %}
+
+{% block content %}
+<h1> {{product.name}} </h1>
+
+<p>Description: {{ product.description }}</p>
+
+<h3>Products:</h3>
+<ul>
+    {% for product in products %}
+    <li>{{ product.name }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %} -->
