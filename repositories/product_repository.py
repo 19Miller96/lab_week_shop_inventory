@@ -3,8 +3,8 @@ from models.manufacturer import Manufacturer
 from models.product import Product
 
 def save(product):
-    sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
-    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost]
+    sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost, manufacturer) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost, product.manufacturer]
     results = run_sql( sql, values )
     product.id = results[0]['id']
     return product
@@ -16,7 +16,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['id'])
+        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['manufacturer'], row['id'])
         products.append(product)
     return products
 
@@ -27,7 +27,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['id'])
+        product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['manufacturer'], result['id'])
     return product
 
 def delete_all():
@@ -42,7 +42,7 @@ def manufacturers(product):
     results = run_sql(sql, values)
 
     for row in results:
-        products = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['id'])
+        products = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['manufacturer'], row['id'])
         product.append(products)
 
     return products
