@@ -8,14 +8,14 @@ import repositories.product_repository as product_repository
 manufacturer_repository.delete_all()
 product_repository.delete_all()
 
-product1 = Product('Banana', 'A generic description', 20, 2, 3.50)
-product_repository.save(product1)
+product_1 = Product('Banana', 'A generic description', 20, 2, 3.50)
+product_repository.save(product_1)
 
-manufacturer1 = Manufacturer('Tesco')
-manufacturer_repository.save(manufacturer1)
+manufacturer_1 = Manufacturer('Tesco')
+manufacturer_repository.save(manufacturer_1)
 
-# print(manufacturer_repository.products(manufacturer1))
-# pdb.set_trace()
+print(manufacturer_repository.products(manufacturer_1))
+pdb.set_trace()
 
-# print(product_repository.product(product1))
-# pdb.set_trace()
+print(product_repository.product(product_1))
+pdb.set_trace()

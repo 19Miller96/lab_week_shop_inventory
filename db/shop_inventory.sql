@@ -8,6 +8,9 @@ CREATE TABLE manufacturers (
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  category VARCHAR(255),
-  name VARCHAR(255)
+  name VARCHAR(255),
+  description VARCHAR(255),
+  stock_quantity INT,
+  buying_cost INT,
+  selling_cost INT
 );

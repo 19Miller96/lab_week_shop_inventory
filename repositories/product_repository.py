@@ -27,22 +27,22 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['id'] )
+        product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['id'])
     return product
 
 def delete_all():
     sql = "DELETE FROM products"
     run_sql(sql)
 
-# def products(manufacturer):
-#     products = []
-#     sql = "SELECT products.* FROM manufacturers INNER JOIN visits ON visits.user_id = users.id WHERE visits.location_id = %s"
-#     values = [products.id]
+def products(manufacturer):
+    products = []
+    sql = "SELECT products.* FROM manufacturers"
+    values = [products.id]
 
-#     results = run_sql(sql, values)
+    results = run_sql(sql, values)
 
-#     for row in results:
-#         products = Products(row['name'], row['id'])
-#         products.append(products)
+    for row in results:
+        products = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['id'])
+        products.append(products)
 
-#     return products
+    return products

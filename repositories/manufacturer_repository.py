@@ -34,15 +34,15 @@ def delete_all():
     sql = "DELETE FROM manufacturers"
     run_sql(sql)
 
-# def products(manufacturer):
-#     products = []
-#     sql = "SELECT products.* FROM products INNER JOIN visits ON visits.user_id = users.id WHERE visits.location_id = %s"
-#     values = [manufacturer.id]
+def products(manufacturer):
+    products = []
+    sql = "SELECT products.* FROM products"
+    values = [manufacturer.id]
 
-#     results = run_sql(sql, values)
+    results = run_sql(sql, values)
 
-#     for row in results:
-#         product = Product(row['name'], row['id'])
-#         products.append(product)
+    for row in results:
+        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['id'])
+        products.append(product)
 
-#     return products
+    return products
