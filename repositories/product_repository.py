@@ -34,15 +34,15 @@ def delete_all():
     sql = "DELETE FROM products"
     run_sql(sql)
 
-def products(manufacturer):
+def products(product):
     products = []
-    sql = "SELECT products.* FROM manufacturers"
-    values = [products.id]
+    sql = "SELECT products.* FROM product"
+    values = [product.id]
 
     results = run_sql(sql, values)
 
     for row in results:
         products = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['id'])
-        products.append(products)
+        product.append(products)
 
     return products

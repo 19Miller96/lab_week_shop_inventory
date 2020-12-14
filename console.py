@@ -17,5 +17,5 @@ manufacturer_repository.save(manufacturer_1)
 print(manufacturer_repository.products(manufacturer_1))
 pdb.set_trace()
 
-print(product_repository.product(product_1))
+print(product_repository.products(product_1))
 pdb.set_trace()
