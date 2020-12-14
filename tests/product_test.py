@@ -22,3 +22,6 @@ class TestProduct(unittest.TestCase):
     def test_product_returns_selling_cost(self):
         self.assertEqual(2, self.product_1.selling_cost)
 
+    def test_product_returns_profit(self):
+        self.assertEqual(1, self.product_1.selling_cost - self.product_1.buying_cost)
+
