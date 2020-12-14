@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Products</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/products/new">New product</a>
+</p>
+
+<ul>
+  {% for product in products %}
+  <li>
+  <p>{{ product.name.description }} - {{ manufacturer.name }} </p>
+  <p>"<i>{{product.review}}</i>"</p>
+    <p>
+      <form action="/visits/{{ visit.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
