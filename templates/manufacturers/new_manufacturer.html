@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Manufacturer</h1>
+
+<form action="/manufacturers" method="post">
+  <label for="product">Select a product:</label>
+    <select name="product_id" id="product">
+      {% for product in products %}
+      <option value="{{ product.id }}">{{ product.name }}</option>
+      {% endfor %}
+    </select>
+  
+  <label for="manufacturer">Select a manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer">
+      {% for manufacturer in manufacturers %}
+      <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+      {% endfor %}
+    </select>
+
+  <!-- <label for="review">Add a Review</label>
+  <textarea name="review" id="review" cols="30" rows="10"></textarea>
+  <input class="btn btn--action" type='submit' value="Visit"> -->
+</form>
+
+{% endblock %}
