@@ -5,7 +5,6 @@ from models.manufacturer import Manufacturer
 import repositories.product_repository as product_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
-
 products_blueprint = Blueprint("products", __name__)
 
 @products_blueprint.route("/products")
