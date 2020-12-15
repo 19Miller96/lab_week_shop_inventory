@@ -14,6 +14,10 @@ manufacturer_repository.save(manufacturer_1)
 manufacturer_2 = Manufacturer('Morrisons')
 manufacturer_repository.save(manufacturer_2)
 
+manufacturer_3 = Manufacturer('Sainsburys')
+manufacturer_repository.save(manufacturer_3)
+
+
 product_1 = Product('Banana', 'A generic description', 20, 2, 4, manufacturer_1)
 product_repository.save(product_1)
 
