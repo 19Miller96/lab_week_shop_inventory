@@ -19,3 +19,9 @@ def show(id):
     manufacturers = product_repository.manufacturers(product)
     return render_template("products/show.html", product = product, manufacturers = manufacturers)
 
+@products_blueprint.route("/products/new", methods=['GET'])
+def create_new_product():
+    products = product_repository.select_all()
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("products/net.html", products = products, manufacturers = manufacturers)
+
