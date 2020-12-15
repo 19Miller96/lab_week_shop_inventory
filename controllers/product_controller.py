@@ -15,3 +15,4 @@ def show(id):
     product = product_repository.select(id)
     manufacturers = product_repository.manufacturers(product)
     return render_template("products/show.html", product = product, manufacturers = manufacturers)
+
