@@ -13,4 +13,5 @@ def products():
 @products_blueprint.route("/products/<id>")
 def show(id):
     product = product_repository.select(id)
-    return render_template("product/show.html", products = products)
+    manufacturers = product_repository.manufacturers(product)
+    return render_template("products/show.html", product = product, manufacturers = manufacturers)
