@@ -33,10 +33,10 @@ def delete_all():
     sql = "DELETE FROM manufacturers"
     run_sql(sql)
 
-def products(manufacturer):
+def products(manufacturer_id):
     products = []
-    sql = "SELECT products.* FROM products"
-    values = [manufacturer.id]
+    sql = "SELECT products.* FROM products WHERE manufacturer_id = %s"
+    values = [manufacturer_id]
 
     results = run_sql(sql, values)
 

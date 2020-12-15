@@ -11,6 +11,11 @@
   <tr>
     <td><a href="/manufacturers/{{ manufacturer.id }}"> {{manufacturer.name}} </a></td>
   </tr>
+  <tr>
+    <th>Products Manufactured</th>
+    <td><a href="/manufacturers/{{ manufacturer.id }}/products"> click here </a></td>
+  </tr>
+
   {% endfor %}
 </table>
 {% endblock %}
