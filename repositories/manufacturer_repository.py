@@ -36,7 +36,7 @@ def delete_all():
 
 def products(manufacturer):
     products = []
-    sql = "SELECT products.* FROM products"
+    sql = "SELECT products.* FROM products INNER JOIN visits ON visits.product_id = products.id WHERE visits.manufacturer_id = %s"
     values = [manufacturer.id]
 
     results = run_sql(sql, values)

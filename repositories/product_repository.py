@@ -4,8 +4,8 @@ from models.product import Product
 import pdb
 
 def save(product):
-    sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost, manufacturer) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
-    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost, product.manufacturer]
+    sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost]
     results = run_sql( sql, values )
     pdb.set_trace()
     product.id = results[0]['id']
@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['manufacturer'], row['id'])
+        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['id'])
         products.append(product)
     return products
 
@@ -29,7 +29,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['manufacturer'], result['id'])
+        product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['id'])
     return product
 
 def delete_all():
@@ -37,14 +37,14 @@ def delete_all():
     run_sql(sql)
 
 def manufacturers(product):
-    products = []
-    sql = "SELECT products.* FROM product"
+    manufacturers = []
+    sql = "SELECT manufacturers.* FROM manufacturers INNER JOIN visits ON visits.manufacturer_id = manufacturers.id WHERE visits.product_id = %s"
     values = [product.id]
 
     results = run_sql(sql, values)
 
     for row in results:
-        products = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['manufacturer'], row['id'])
-        product.append(products)
+        manufacturer = Manufacturer(row['name'], row['id'])
+        manufacturers.append(manufacturer)
 
-    return products
+    return manufacturers

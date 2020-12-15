@@ -8,7 +8,7 @@ import repositories.product_repository as product_repository
 manufacturer_repository.delete_all()
 product_repository.delete_all()
 
-product_1 = Product("Banana", "A generic description", 20, 2, 4, "Tesco")
+product_1 = Product('Banana', 'A generic description', 20, 2, 4, 'Tesco')
 product_repository.save(product_1)
 
 manufacturer_1 = Manufacturer('Tesco')

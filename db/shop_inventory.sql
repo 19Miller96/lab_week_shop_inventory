@@ -12,6 +12,5 @@ CREATE TABLE products (
   description VARCHAR(255),
   stock_quantity INT,
   buying_cost INT,
-  selling_cost INT,
-  manufacturer VARCHAR(255)
+  selling_cost INT
 );
