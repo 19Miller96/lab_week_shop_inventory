@@ -1,11 +1,13 @@
 from db.run_sql import run_sql
 from models.manufacturer import Manufacturer
 from models.product import Product
+import pdb
 
 def save(product):
-    sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost, manufacturer) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost, manufacturer) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
     values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost, product.manufacturer]
     results = run_sql( sql, values )
+    pdb.set_trace()
     product.id = results[0]['id']
     return product
 

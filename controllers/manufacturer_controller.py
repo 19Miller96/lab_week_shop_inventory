@@ -14,4 +14,4 @@ def manufacturers():
 def show(id):
     manufacturer = manufacturer_repository.select(id)
     products = manufacturer_repository.products(manufacturer)
-    return render_template("manufacturers/show.html", manufacturer=manufacturer, products=products)
+    return render_template("manufacturers/show.html", manufacturer = manufacturer, products = products)
