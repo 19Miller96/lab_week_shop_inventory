@@ -3,8 +3,8 @@ from models.manufacturer import Manufacturer
 from models.product import Product
 
 def save(manufacturer):
-    sql = "INSERT INTO manufacturers(name, product_id) VALUES (%s, %s) RETURNING id"
-    values = [manufacturer.name, manufacturer.product.id]
+    sql = "INSERT INTO manufacturers(name) VALUES (%s) RETURNING id"
+    values = [manufacturer.name]
     results = run_sql( sql, values )
     manufacturer.id = results[0]['id']
     return manufacturer
@@ -35,7 +35,7 @@ def delete_all():
 
 def products(manufacturer):
     products = []
-    sql = "SELECT products.* FROM products INNER JOIN visits ON visits.product_id = products.id WHERE visits.manufacturer_id = %s"
+    sql = "SELECT products.* FROM products"
     values = [manufacturer.id]
 
     results = run_sql(sql, values)
