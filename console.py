@@ -11,6 +11,9 @@ product_repository.delete_all()
 manufacturer_1 = Manufacturer('Tesco')
 manufacturer_repository.save(manufacturer_1)
 
+manufacturer_2 = Manufacturer('Morrisons')
+manufacturer_repository.save(manufacturer_2)
+
 product_1 = Product('Banana', 'A generic description', 20, 2, 4, manufacturer_1)
 product_repository.save(product_1)
 
