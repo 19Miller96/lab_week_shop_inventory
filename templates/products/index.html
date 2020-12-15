@@ -11,7 +11,11 @@
   <tr>
     <td><a href="/products/{{ product.id }}"> {{product.name}} </a></td>
     <td><a href="/products/{{ product.description }}"> {{product.description}} </a></td>
+    <td><a href="/products/{{ product.stock_quantity }}"> {{product.stock_quantity}} </a></td>
+    
   </tr>
   {% endfor %}
 </table>
 {% endblock %}
+
+<!-- stock_quantity, buying_cost, selling_cost, manufacturer -->
