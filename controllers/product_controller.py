@@ -23,5 +23,4 @@ def show(id):
 def create_new_product():
     products = product_repository.select_all()
     manufacturers = manufacturer_repository.select_all()
-    return render_template("products/net.html", products = products, manufacturers = manufacturers)
-
+    return render_template("products/new.html", products = products, manufacturers = manufacturers)
