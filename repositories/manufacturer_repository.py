@@ -3,8 +3,8 @@ from models.manufacturer import Manufacturer
 from models.product import Product
 
 def save(manufacturer):
-    sql = "INSERT INTO manufacturers(name) VALUES (%s) RETURNING id"
-    values = [manufacturer.name]
+    sql = "INSERT INTO manufacturers(name, product_id) VALUES (%s, %s) RETURNING id"
+    values = [manufacturer.name, manufacturer.product.id]
     results = run_sql( sql, values )
     manufacturer.id = results[0]['id']
     return manufacturer
@@ -45,3 +45,8 @@ def products(manufacturer):
         products.append(product)
 
     return products
+
+def update(manufacturer):
+    sql = "UPDATE manufacturers SET (name) = (%s) WHERE id = %s"
+    values = [manufacturer.name, manufacturer.id]
+    run_sql(sql, values)

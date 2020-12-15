@@ -4,7 +4,8 @@ DROP TABLE products;
 
 CREATE TABLE manufacturers (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  product_id INT REFERENCES products(id) ON DELETE CASCADE
 );
 
 CREATE TABLE products (
@@ -13,7 +14,8 @@ CREATE TABLE products (
   description VARCHAR(255),
   stock_quantity INT,
   buying_cost INT,
-  selling_cost INT
+  selling_cost INT,
+  manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE
 );
 
 CREATE TABLE visits (

@@ -46,3 +46,8 @@ def manufacturers(product):
         manufacturers.append(manufacturer)
 
     return manufacturers
+
+def update(product):
+    sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_cost) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost]
+    run_sql(sql, values)
