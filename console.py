@@ -17,24 +17,20 @@ manufacturer_repository.save(manufacturer_2)
 manufacturer_3 = Manufacturer('Sainsburys')
 manufacturer_repository.save(manufacturer_3)
 
+manufacturer_4 = Manufacturer('Asda')
+manufacturer_repository.save(manufacturer_4)
 
 product_1 = Product('Banana', 'A generic description', 20, 2, 4, manufacturer_1)
 product_repository.save(product_1)
 
-# product_2 = Product('Apple', 'A healthy green fruit', 15, 1, 2, "Tesco")
-# product_repository.save(product_2)
+product_2 = Product('Apple', 'A healthy green fruit', 15, 1, 2, manufacturer_2)
+product_repository.save(product_2)
 
-# manufacturer_2 = Manufacturer('Sainsburys')
-# manufacturer_repository.save(manufacturer_2)
+product_3 = Product('Orange', 'A delicious fruit', 25, 1, 2, manufacturer_3)
+product_repository.save(product_3)
 
-# product_3 = Product('Orange', 'A delicious fruit', 25, 1, 2, "Tesco")
-# product_repository.save(product_3)
-
-# manufacturer_3 = Manufacturer('Morrisons')
-# manufacturer_repository.save(manufacturer_3)
-
-# product_4 = Product('Mango', 'Fresh from Australia', 60, 3, 5, "Tesco")
-# product_repository.save(product_4)
+product_4 = Product('Mango', 'Fresh from Australia', 60, 3, 5, manufacturer_1)
+product_repository.save(product_4)
 
 # product_5 = Product('Kiwi', 'Not actually from New Zealand', 18, 3, 4)
 # product_repository.save(product_5)
