@@ -10,6 +10,7 @@
   {% for product in products %}
   <tr>
     <td><a href="/products/{{ product.id }}"> {{product.name}} </a></td>
+    <td><a href="/products/{{ product.description }}"> {{product.description}} </a></td>
   </tr>
   {% endfor %}
 </table>
