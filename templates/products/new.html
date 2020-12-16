@@ -15,28 +15,28 @@
     </select>
   
 <!-- A a product descritpion here -->
-  <label for="description">Add a description</label>
+  <label for="description">Add Description</label>
   <textarea name="description" id="description" cols="50" rows="4"></textarea>  
 
 <!-- A a product stock_quantity here -->
-  <label for="stock_quantity">Add stock quantity</label>
+  <label for="stock_quantity">Add Stock Quantity</label>
   <select name="stock_quantity_id" id="stock_quantity">
   </select>
 
 <!-- A a product buying_cost here -->
 
-<label for="buying_cost">Add buying_cost</label>
+<label for="buying_cost">Add Buying Cost</label>
 <select name="buying_cost_id" id="buying_cost">
 </select>
 
 <!-- A a product selling_cost here -->
 
-<label for="selling_cost">Add selling_cost</label>
+<label for="selling_cost">Add Selling Cost</label>
   <select name="selling_cost_id" id="selling_cost">
   </select>
 
 <!-- Add a manufacturer here -->
-  <label for="manufacturer">Select a manufacturer:</label>
+  <label for="manufacturer">Select Manufacturer:</label>
     <select name="manufacturer_id" id="manufacturer">
       {% for manufacturer in manufacturers %}
       <option value="{{ manufacturer_id }}">{{ manufacturer.name }}</option>
