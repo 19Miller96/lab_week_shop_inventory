@@ -7,6 +7,7 @@
   <a class="btn btn--action" href="/products/new">New product</a>
 </p>
 
+
 <table>
   <tr>  
     <th>Name</th>
@@ -35,6 +36,14 @@
     <th>Manufacturer</th>
     <td><a href="/products/{{ product.manufacturer }}"> {{product.manufacturer}} </a></td>
   </tr>
+  <tr>
+    <th></th>
+    <td><form action="/products/{{ product.id }}/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="delete" />
+    </form></td>
+  </tr>
+
   {% endfor %}
+
 </table>
 {% endblock %}

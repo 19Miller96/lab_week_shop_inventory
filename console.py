@@ -29,8 +29,8 @@ product_repository.save(product_2)
 product_3 = Product('Orange', 'A delicious fruit', 25, 1, 2, manufacturer_3)
 product_repository.save(product_3)
 
-print(manufacturer_repository.products(manufacturer_1))
-pdb.set_trace()
+# print(manufacturer_repository.products(manufacturer_1))
+# pdb.set_trace()
 
-print(product_repository.manufacturers(product_1))
-pdb.set_trace()
+# print(product_repository.manufacturers(product_1))
+# pdb.set_trace()
