@@ -3,10 +3,18 @@
 {% block content %}
 <h1> {{product.name}} </h1>
 
-<h3>Product:</h3>
+<h3>Products:</h3>
 <ul>
     {% for product in products %}
     <li>{{ product.name }}</li>
     {% endfor %}
+</ul>
+
+<h1> {{product.products}} </h1>
+
+<h3>Products:</h3>
+<ul>
+    {% for product in products %}
+    <li>{{ product.name }}</li>
 </ul>
 {% endblock %}

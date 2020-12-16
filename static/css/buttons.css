@@ -6,19 +6,19 @@
   }
   
   .btn--danger {
-    background-color: #C33C54;
+    background-color: #0f0a0a;
   }
   
   .btn--danger:hover {
-    background-color: #730000;
+    background-color: #1a0e0e;
   }
   
   .btn--action:hover {
-    background-color: #ABC798;
+    background-color: #221818;
   }
   
   .btn--action {
-    background-color: #ABC798;
+    background-color: #110e0e;
   }
   
   .btn--wrapper {

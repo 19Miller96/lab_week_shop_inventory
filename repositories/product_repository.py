@@ -3,11 +3,13 @@ from db.run_sql import run_sql
 from models.manufacturer import Manufacturer
 from models.product import Product
 
+from repositories import manufacturer_repository
+
 import pdb
 
 def save(product):
     sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost, manufacturer_id) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
-    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost, product.manufacturer.id]
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_cost, product.manufacturer_id]
     results = run_sql( sql, values )
     product.id = results[0]['id']
     return product
@@ -17,7 +19,6 @@ def select_all():
 
     sql = "SELECT * FROM products"
     results = run_sql(sql)
-
     for row in results:
         product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['manufacturer_id'], row['id'])
         products.append(product)

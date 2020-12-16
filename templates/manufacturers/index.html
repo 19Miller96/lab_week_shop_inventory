@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>Manufacturers</h1>
 
 <p class="btn--wrapper">
@@ -17,9 +18,11 @@
   </tr>
   <tr>
     <th>Products Manufactured</th>
-    <td><a href="/manufacturers/{{ manufacturer.id }}/products"> click here </a></td>
+    <td><a href="/manufacturers/{{ manufacturer.id }}/products"> Click Here </a></td>
   </tr>
+
   {% endfor %}
+
 </table>
 
 {% endblock %}
