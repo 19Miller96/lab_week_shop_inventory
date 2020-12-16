@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add Manufacturer</h1>
+
+<form action="/manufacturers" method="post">
+  <label for="manufacturer">Select a manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer">
+      {% for manufacturer in manufacturers %}
+      <option value="{{ manufacturer_id }}">{{ manufacturer.name }}</option>
+      {% endfor %}
+    </select>
+
+    <input class="btn btn--action" type='submit' value="Submit">  
+
+</form>
+
+{% endblock %}

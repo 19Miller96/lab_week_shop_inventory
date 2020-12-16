@@ -1,6 +1,9 @@
 from db.run_sql import run_sql
+
 from models.manufacturer import Manufacturer
 from models.product import Product
+
+import pdb
 
 def save(product):
     sql = "INSERT INTO products(name, description, stock_quantity, buying_cost, selling_cost, manufacturer_id) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"

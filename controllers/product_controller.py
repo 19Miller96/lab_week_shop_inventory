@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 
+import pdb
+
 from models.product import Product
 from models.manufacturer import Manufacturer
 
@@ -20,24 +22,24 @@ def show(id):
     manufacturers = product_repository.manufacturers(product)
     return render_template("products/show.html", product = product, manufacturers = manufacturers)
 
+@products_blueprint.route("/products/new")
+def new_product():
+    return render_template("products/new.html")
+
 # Create a new product here
 @products_blueprint.route("/products",  methods=['POST'])
 def create_product():
-    product_id = request.form['product_id']
-    manufacturer_id = request.form['manufacturer_id']
-    product = product_repository.select(product_id)
-    manufacturer = manufacturer_repository.select(manufacturer_id)
-    product_repository.save(product)
+    name = request.form["name"] 
+    description = request.form["description"]
+    stock_quantity = request.form["stock_quantity"]
+    buying_cost = request.form["buying_cost"]
+    selling_cost = request.form["selling_cost"]
+    manufacturer = request.form["manufacturer"]
+    new_product = Product(name, description, stock_quantity, buying_cost, selling_cost, manufacturer)
+    product_repository.save(new_product)
     return redirect('/products')
-
-@products_blueprint.route("/products/new", methods=['GET'])
-def new_product():
-    products = product_repository.select_all()
-    manufacturers = manufacturer_repository.select_all()
-    return render_template("products/new.html", products = products, manufacturers = manufacturers)
 
 @products_blueprint.route("/products/<id>/delete", methods=['POST'])
 def delete_product(id):
     product_repository.delete(id)
     return redirect('/products')
-

@@ -7,6 +7,8 @@ from models.manufacturer import Manufacturer
 import repositories.product_repository as product_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
+import pdb
+
 manufacturers_blueprint = Blueprint("manufacturers", __name__)
 
 @manufacturers_blueprint.route("/manufacturers")
@@ -25,18 +27,15 @@ def product_list(id):
     products = manufacturer_repository.products(id)
     return render_template("manufacturers/products.html", products = products)
 
+@manufacturers_blueprint.route("/manufacturers/new")
+def new_manufacturer():
+    return render_template("manufacturers/new.html")
+
 # Create a new manufacturer here
 @manufacturers_blueprint.route("/manufacturers",  methods=['POST'])
 def create_manufacturer():
-    manufacturer_id = request.form['manufacturer_id']
-    product_id = request.form['product_id']
-    manufacturer = manufacturer_repository.select(manufacturer_id)
-    product = product_repository.select(product_id)
-    manufacturer_repository.save(manufacturer)
+    name = request.form["name"]
+    new_manufacturer = Manufacturer(name)
+    manufacturer_repository.save(new_manufacturer)
     return redirect('/manufacturers')
 
-@manufacturers_blueprint.route("/manufacturers/new", methods=['GET'])
-def new_manufacturer():
-    manufacturers = manufacturer_repository.select_all()
-    products = product_repository.select_all()
-    return render_template("manufacturers/new.html", manufacturers = manufacturers, products = products)
