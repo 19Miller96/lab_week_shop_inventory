@@ -20,3 +20,19 @@ def show(id):
 def product_list(id):
     products = manufacturer_repository.products(id)
     return render_template("manufacturers/products.html", products = products)
+
+# Create a new manufacturer here
+@manufacturers_blueprint.route("/manufacturers",  methods=['POST'])
+def create_manufacturer():
+    manufacturer_id = request.form['manufacturer_id']
+    product_id = request.form['product_id']
+    manufacturer = manufacturer_repository.select(manufacturer_id)
+    product = product_repository.select(product_id)
+    manufacturer_repository.save(manufacturer)
+    return redirect('/manufacturers')
+
+@products_blueprint.route("/products/new", methods=['GET'])
+def new_product():
+    products = product_repository.select_all()
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("products/new.html", products = products, manufacturers = manufacturers)
