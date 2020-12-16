@@ -4,6 +4,8 @@
 <h1>Add Manufacturer</h1>
 
 <form action="/manufacturers" method="post">
+
+<!-- Add a manufacturer goes here -->
   <label for="manufacturer">Select a manufacturer:</label>
     <select name="manufacturer_id" id="manufacturer">
       {% for manufacturer in manufacturers %}
@@ -11,6 +13,7 @@
       {% endfor %}
     </select>
 
+<!-- Submit button goes here -->
     <input class="btn btn--action" type='submit' value="Submit">  
 
 </form>
