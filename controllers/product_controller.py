@@ -29,7 +29,7 @@ def new_product():
 # Create a new product here
 @products_blueprint.route("/products",  methods=['POST'])
 def create_product():
-    name = request.form["name"] 
+    name = request.form["name"]
     description = request.form["description"]
     stock_quantity = request.form["stock_quantity"]
     buying_cost = request.form["buying_cost"]

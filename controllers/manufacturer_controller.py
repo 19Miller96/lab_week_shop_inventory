@@ -38,4 +38,3 @@ def create_manufacturer():
     new_manufacturer = Manufacturer(name)
     manufacturer_repository.save(new_manufacturer)
     return redirect('/manufacturers')
-
