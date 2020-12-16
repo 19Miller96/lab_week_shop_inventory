@@ -24,7 +24,8 @@ def show(id):
 
 @products_blueprint.route("/products/new")
 def new_product():
-    return render_template("products/new.html")
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("products/new.html", manufacturers = manufacturers)
 
 # Create a new product here
 @products_blueprint.route("/products",  methods=['POST'])

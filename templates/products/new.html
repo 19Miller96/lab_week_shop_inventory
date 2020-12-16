@@ -5,35 +5,38 @@
 
 <form action="/products" method="post">
 
-<!-- Add a product name here -->
+  <label for="manufacturer">Select Manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer">
+      {% for manufacturer in manufacturers %}
+      <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+      {% endfor %}
+    </select>
+    
+  <!-- Add a product name here -->
   <label for="product">Add a name:</label>
   <textarea name="name" id="name" cols="50" rows="4"></textarea>
 
-<!-- A a product description here -->
+  <!-- A a product description here -->
   <label for="description">Add Description</label>
   <textarea name="description" id="description" cols="50" rows="4"></textarea>  
 
-<!-- A a product stock_quantity here -->
+  <!-- A a product stock_quantity here -->
   <label for="stock_quantity">Add Stock Quantity</label>
   <textarea name="stock_quantity" id="stock_quantity" cols="50" rows="4"></textarea>
 
-<!-- A a product buying_cost here -->
+  <!-- A a product buying_cost here -->
 
   <label for="buying_cost">Add Buying Cost</label>
   <textarea name="buying_cost" id="buying_cost" cols="50" rows="4"></textarea>
 
-<!-- A a product selling_cost here -->
+  <!-- A a product selling_cost here -->
 
-<label for="selling_cost">Add Selling Cost</label>
+  <label for="selling_cost">Add Selling Cost</label>
   <textarea name="selling_cost" id="selling_cost" cols="50" rows="4"></textarea>
 
-<!-- Add a manufacturer here -->
-  <label for="manufacturer">Select Manufacturer:</label>
-  <textarea name="manufacturer" id="manufacturer" cols="50" rows="4"></textarea>
-
-<!-- Submit button goes here -->
+  <!-- Submit button goes here -->
    
-<input class="btn btn--action" type='submit' value="Submit">    
+  <input class="btn btn--action" type='submit' value="Submit">    
 
 </form>
 
