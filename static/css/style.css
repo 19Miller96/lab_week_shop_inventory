@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(182, 182, 212);
+    background: url('/static/images/nice_background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: #f8f7f6;
@@ -7,4 +7,3 @@ body {
     padding: 0px;
     margin: 0px;
   }
-
