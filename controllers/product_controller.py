@@ -27,7 +27,6 @@ def new_product():
     manufacturers = manufacturer_repository.select_all()
     return render_template("products/new.html", manufacturers = manufacturers)
 
-# Create a new product here
 @products_blueprint.route("/products",  methods=['POST'])
 def create_product():
     name = request.form["name"]

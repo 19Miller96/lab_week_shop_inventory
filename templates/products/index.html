@@ -1,49 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Products</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/products/new">New product</a>
-</p>
+  <h1>Products</h1>
+
+  <p class="btn--wrapper"><a class="btn btn--action" href="/products/new">New product</a></p>
 
 <table>
-  <tr>  
-    <th>Name</th>
-  </tr>
-  {% for product in products %}
-  <tr>
-    <td><a href="/products/{{ product.id }}"> {{product.name}} </a></td>
-  </tr>
-  <tr>
-    <th>Description</th>
-    <td><a href="/products/{{ product.description }}"> {{product.description}} </a></td>
-  </tr>
-  <tr>
-    <th>Stock Quantity</th>
-    <td><a href="/products/{{ product.stock_quantity }}"> {{product.stock_quantity}} </a></td>
-  </tr>
-  <tr>
-    <th>Buying Cost</th>
-    <td><a href="/products/{{ product.buying_cost }}"> {{product.buying_cost}} </a></td>
-  </tr>
-  <tr>
-    <th>Selling Cost</th>
-    <td><a href="/products/{{ product.selling_cost }}"> {{product.selling_cost}} </a></td>
-  </tr>
-  <tr>
-    <th>Manufacturer</th>
-    <td><a href="/products/{{ product.manufacturer }}"> {{product.manufacturer}} </a></td>
-  </tr>
-  <tr>
-    <th>Delete</th>
-    <td><form action="/products/{{ product.id }}/delete" method="POST">
-      <input class="btn btn--danger" type="submit" value="delete" />
-    </form></td>
-  </tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Stock Quantity</th>
+  <th>Buying Cost</th>
+  <th>Selling Cost</th>
+  <th>Manufacturer</th>
 
+  {% for product in products %}
+
+  <tr>
+    <td class="table_details"><a href="/products/{{ product.id }}"> {{product.name}} </a></td>
+    <td class="table_details"><a href="/products/{{ product.description }}"> {{product.description}} </a></td>
+
+    {% if product.stock_quantity == 0 %}
+    <td class="table_details no_stock">{{product.stock_quantity}}</td>
+    {% elif product.stock_quantity < 45 %}
+    <td class="table_details low_stock">{{product.stock_quantity}}</td>
+    {% else %}
+    <td class="table_details">{{product.stock_quantity}}</td>
+    {% endif %}
+    <td class="table_details">{{product.buying_cost}}</td>
+    <td class="table_details">{{product.selling_cost}}</td>
+    <td class="table_details">{{product.manufactuer}}</td>
+
+    <td><form action="/products/{{ product.id }}/delete" method="POST"><input class="btn btn--danger" type="submit" value="delete" /></form></td>
+  </tr> 
+</table>
   {% endfor %}
 
-</table>
-
-{% endblock %}
+  {% endblock %}

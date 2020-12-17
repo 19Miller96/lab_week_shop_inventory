@@ -1,24 +1,27 @@
 .btn {
-    border:0px none;
+    border:20px none;
+    background-color: rgb(253, 252, 251);
     padding: 4px 8px;
     color: #FFFFFF;
     cursor:pointer;
+    border-color: black;
   }
   
   .btn--danger {
-    background-color: #0f0a0a;
+    background-color: #f7f5f7;
   }
   
   .btn--danger:hover {
-    background-color: #1a0e0e;
+    background-color: #fdfcfc;
   }
   
   .btn--action:hover {
-    background-color: #221818;
+    background-color: #f5f8f5;
   }
   
   .btn--action {
-    background-color: #110e0e;
+    background-color: #f8fcfa;
+    border-color: black;
   }
   
   .btn--wrapper {

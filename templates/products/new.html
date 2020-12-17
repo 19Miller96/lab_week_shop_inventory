@@ -5,8 +5,8 @@
 
 <form action="/products" method="post">
 
-  <label for="manufacturer">Select Manufacturer:</label>
-    <select name="manufacturer_id" id="manufacturer">
+  <label for="manufacturer_id">Select Manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer_id">
       {% for manufacturer in manufacturers %}
       <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
       {% endfor %}

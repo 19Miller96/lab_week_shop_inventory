@@ -31,7 +31,6 @@ def product_list(id):
 def new_manufacturer():
     return render_template("manufacturers/new.html")
 
-# Create a new manufacturer here
 @manufacturers_blueprint.route("/manufacturers",  methods=['POST'])
 def create_manufacturer():
     name = request.form["name"]
