@@ -19,8 +19,10 @@
   <tr>
     <th>Products Manufactured</th>
     <td><a href="/manufacturers/{{ manufacturer.id }}/products"> Click Here </a></td>
-  </tr>
 
+    <td><form action="/manufacturers/{{ manufactuer_id }}/delete" method="POST"><input class="btn btn--danger" type="submit" value="delete" /></form></td>
+
+  </tr>
   {% endfor %}
 
 </table>

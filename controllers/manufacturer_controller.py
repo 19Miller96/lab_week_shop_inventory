@@ -37,3 +37,8 @@ def create_manufacturer():
     new_manufacturer = Manufacturer(name)
     manufacturer_repository.save(new_manufacturer)
     return redirect('/manufacturers')
+
+@manufacturers_blueprint.route("/manufacturers/<id>/delete", methods=['POST'])
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
+    return redirect('/manufacturers')
