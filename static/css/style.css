@@ -1,8 +1,8 @@
 body {
-    background: url('/static/images/cloud_photo.jpg');
+    background: url('/static/images/simple_grey.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    color: #2763a7;
+    color: rgb(7, 7, 7);
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     padding: 0px;
     margin: 0px;

@@ -1,6 +1,6 @@
 .btn {
     border:20px none;
-    background-color: rgb(253, 252, 251);
+    background-color: rgb(128, 95, 63);
     padding: 4px 8px;
     color: #FFFFFF;
     cursor:pointer;
@@ -8,11 +8,11 @@
   }
   
   .btn--danger {
-    background-color: #f7f5f7;
+    background-color: #f50808;
   }
   
   .btn--danger:hover {
-    background-color: #fdfcfc;
+    background-color: #fa0606;
   }
   
   .btn--action:hover {
@@ -20,8 +20,7 @@
   }
   
   .btn--action {
-    background-color: #f8fcfa;
-    border-color: black;
+    background-color: #1c87a8;
   }
   
   .btn--wrapper {
